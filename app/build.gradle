@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "me.jessyan.armscomponent.app"
+        applicationId "com.chj.aroutercompent.app"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
@@ -52,14 +52,15 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation rootProject.ext.dependencies["constraint-layout"]
     if (!isBuildModule.toBoolean()) {
         implementation project(":module-video")
         implementation project(":module-custom")
     } else {
-        implementation project(":commonres")//因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
+        //因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
         implementation project(":commonservice")
+        implementation project(":commonres")
     }
     //tools
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
