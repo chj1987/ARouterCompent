@@ -43,4 +43,7 @@ dependencies {
         exclude module: 'support-annotations'
     }
     api rootProject.ext.dependencies["retrofit-url-manager"]
+
+    api rootProject.ext.dependencies["logger"]
+    api rootProject.ext.dependencies["multidex"]
 }
