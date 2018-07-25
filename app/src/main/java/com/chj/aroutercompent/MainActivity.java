@@ -10,6 +10,7 @@ import android.widget.VideoView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.chj.commonsdk.arouter.RouterHub;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,11 +39,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.btn1:
                 Toast.makeText(MainActivity.this, "btn1", Toast.LENGTH_SHORT).show();
-                ARouter.getInstance().build("/custom/CustomActivity").navigation(MainActivity.this);
+                ARouter.getInstance().build(RouterHub.CUSTOM_CUSTOMACTIVITY).navigation(MainActivity.this);
                 break;
             case R.id.btn2:
                 Toast.makeText(MainActivity.this, "btn2", Toast.LENGTH_SHORT).show();
-                ARouter.getInstance().build("/video/VideoActivity").navigation(MainActivity.this);
+                ARouter.getInstance().build(RouterHub.VIDEO_VIDEOACTIVITY).navigation(MainActivity.this);
                 break;
         }
     }

@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.chj.commonsdk.arouter.RouterHub;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@Route(path = "/custom/CustomActivity")
+@Route(path = RouterHub.CUSTOM_CUSTOMACTIVITY)
 public class CustomActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R2.id.btn_zfb)
     Button mBtnZfb;

@@ -4,8 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.chj.commonsdk.arouter.RouterHub;
 
-@Route(path = "/video/VideoActivity")
+@Route(path = RouterHub.VIDEO_VIDEOACTIVITY)
 public class VideoActivity extends AppCompatActivity {
 
     @Override
